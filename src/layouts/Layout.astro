@@ -1,0 +1,36 @@
+---
+import Header from "../components/Header.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth focus:scroll-auto">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/Avatars/ReadyPlayerMe-Avatar.ico" />
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class=" w-[160vw] md:w-full">
+		<Header />
+		<slot />
+	</body>
+</html>
+<style is:global>
+	*{
+		
+		font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+	body{
+		overflow-x: hidden;
+		background-color: #222;
+	}
+</style>
